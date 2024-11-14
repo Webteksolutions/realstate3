@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyraBuildwell Find your dream house</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- 
+    - favicon
+  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/IMG_7023-removebg-preview.png"
+      type="image"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .navbar {
+        box-shadow: 1px 0px 2px;
+      }
+      .nav-item {
+        color: #454c77;
+        display: inline-block;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .nav-link{
+        color: #454c77;
+      }
+      .nav-link:hover{
+color: #c0921d;
+      }
+      .hero {
+        display: flex;
+      }
+      .form {
+        background-color: #454c77;
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: 550px;
+        padding: 20px;
+        width: 320px;
+      }
+
+      .title {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        margin-top: 30px;
+      }
+
+      .subtitle {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      .input-container {
+        height: 34px;
+        position: relative;
+        width: 100%;
+      }
+
+      .ic1 {
+        margin-top: 40px;
+      }
+
+      .ic2 {
+        margin-top: 30px;
+      }
+
+      .input {
+        background-color: #3b3d54;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding-left: 5px;
+        width: 100%;
+      }
+
+      .cut {
+        background-color: #242640;
+        border-radius: 10px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+      }
+
+      .cut-short {
+        width: 50px;
+      }
+
+      .input:focus ~ .cut,
+      .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+      }
+
+      .placeholder {
+        color: #65657b;
+        font-family: sans-serif;
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+
+      .input:focus ~ .placeholder,
+      .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+
+      .input:not(:placeholder-shown) ~ .placeholder {
+        color: #808097;
+      }
+
+      .input:focus ~ .placeholder {
+        color: #dc2f55;
+      }
+
+      .submit {
+        background-color: #c0921d;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+        outline: 0;
+        text-align: center;
+        width: 100%;
+      }
+
+      .submit:active {
+        background-color: #06b;
+      }
+
+      .about {
+        padding-block: var(--section-padding);
+      }
+
+      .about-banner {
+        position: relative;
+        margin-bottom: 40px;
+      }
+
+      .about-banner > img {
+        max-width: max-content;
+        width: 100%;
+      }
+
+      .about-banner .abs-img {
+        position: absolute;
+        bottom: 100px;
+        left: 15px;
+        width: 50%;
+        border-radius: 4px;
+      }
+
+      .about .section-subtitle {
+        margin-inline: 0;
+      }
+
+      .about .section-title {
+        --text-align: left;
+        --margin-bottom: 15px;
+      }
+
+      .about-text {
+        color: var(--cadet);
+        font-size: var(--fs-5);
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .about-list {
+        margin-bottom: 30px;
+      }
+
+      .about-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .about-item-icon {
+        background: #fee39f;
+        height: 45px;
+        min-width: 45px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+      }
+
+      .about-item-icon ion-icon {
+        color: #c0921d;
+        font-size: 18px;
+      }
+
+      .about-item-text {
+        color: var(--cadet);
+        font-size: var(--fs-5);
+      }
+
+      .about .callout {
+        background: hsla(7, 78%, 53%, 0.05);
+        color: var(--cadet);
+        font-size: var(--fs-5);
+        font-weight: var(--fw-500);
+        line-height: 1.8;
+        padding: 20px 25px;
+        border-left: 4px solid var(--orange-soda);
+        margin-bottom: 40px;
+      }
+
+      .about .btn {
+        max-width: max-content;
+        --text-transform: uppercase;
+      }
+
+      /* Fullscreen overlay */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+
+      /* Popup container */
+      .popup-container {
+        background: #fff;
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        /* text-align: center; */
+        position: relative;
+      }
+
+      /* Form title */
+      .popup-container h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      /* Form inputs */
+      .popup-container input[type="text"],
+      .popup-container input[type="email"],
+      .popup-container input[type="tel"],
+      .popup-container input[type="date"],
+      .popup-container input[type="time"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .hii {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      /* Form button */
+      .popup-container button {
+        /* width: 100%; */
+        padding: 10px;
+        background-color: #c0921d;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .popup-container button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Close button */
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        color: #555;
+        cursor: pointer;
+      }
+
+      .aa {
+        color: #454c77;
+      }
+      @media (max-width: 600px) {
+        .popup-container {
+          padding: 15px;
+          max-width: 90%;
+          width: 100%;
+          border-radius: 8px;
+        }
+        h2 {
+          font-size: 1.2rem;
+          margin-bottom: 15px;
+        }
+        #popupForm input,
+        #popupForm select,
+        #popupForm button {
+          padding: 8px;
+          font-size: 0.9rem;
+        }
+        .close-btn {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 
+    - #HEADER
+  -->
+
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="/assets/images/IMG_7023-removebg-preview.png"
+              alt="website logo"
+              width="150"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto me-2 mb-lg-0" style="gap: 3%">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#"
+                  >Service</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#"
+                  >Property</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- hero -->
+      <br />
+    </header>
+
+    <main>
+      <article>
+        <!-- 
+        - #HERO
+      -->
+
+        <section class="hero">
+          <div style="width: 72%; border-radius: 20px">
+            <div
+              id="carouselExample"
+              class="carousel slide"
+              style="border-radius: 20px"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="/assets/images/about-banner-1.png"
+                    class="d-block w-100"
+                    alt="..."
+                    style="height: 550px"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/assets/images/hero-banner.png"
+                    class="d-block w-100"
+                    alt="..."
+                    style="height: 550px"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/assets/images/LIVING 1st View.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                    style="height: 550px"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div style="padding: 2%; padding-top: 0; width: 10%">
+            <div class="form">
+              <div class="title">Book a free site visit</div>
+              <!-- <div class="subtitle">Let's create your account!</div> -->
+              <div class="input-container ic1">
+                <input
+                  id="firstname"
+                  class="input"
+                  type="text"
+                  placeholder="Your name"
+                />
+                <!-- <div class="cut"></div> -->
+                <!-- <label for="firstname" class="placeholder">First name</label> -->
+              </div>
+              <div class="input-container ic2">
+                <input
+                  id="lastname"
+                  class="input"
+                  type="text"
+                  placeholder="Your Mobile "
+                />
+                <!-- <div class="cut"></div> -->
+                <!-- <label for="lastname" class="placeholder">Last name</label> -->
+              </div>
+              <div class="input-container ic2">
+                <!-- <input id="email" class="input" type="text" placeholder=" " /> -->
+                <!-- <div class="cut cut-short"></div> -->
+                <!-- <label for="email" class="placeholder">Email</> -->
+                <select name="Requirements" id="" class="input">
+                  <option value="">1BHK</option>
+                  <option value="">2BHK</option>
+                  <option value="">3BHK</option>
+                  <option value="">4BHK</option>
+                </select>
+              </div>
+              <div class="input-container ic2">
+                <input
+                  id="lastname"
+                  class="input"
+                  type="time"
+                  placeholder="Time Slot"
+                />
+                <!-- <div class="cut"></div> -->
+                <!-- <label for="lastname" class="placeholder">Last name</label> -->
+              </div>
+              <div class="input-container ic2">
+                <input
+                  id="lastname"
+                  class="input"
+                  type="date"
+                  placeholder="Date"
+                />
+                <!-- <div class="cut"></div> -->
+                <!-- <label for="lastname" class="placeholder">Last name</label> -->
+              </div>
+              <button type="text" class="submit">submit</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #ABOUT
+      -->
+
+        <section class="animate about" id="about" data-aos="fade">
+          <div class="container">
+            <figure class="about-banner">
+              <img
+                src="./assets/images/LIVING 1st View.jpg"
+                alt="House interior"
+                style="
+                  border-top-left-radius: 50px;
+                  border-bottom-right-radius: 50px;
+                  aspect-ratio: 2/2;
+                "
+              />
+
+              <!-- <img src="./assets/images/about-banner-2.jpg" alt="House interior" class="abs-img animate__animated"> -->
+            </figure>
+
+            <div class="about-content" data-aos="fade-up">
+              <p
+                class="section-subtitle"
+                style="background-color: #fee39f; color: #c0921d"
+              >
+                About Us
+              </p>
+
+              <h2 class="h2 section-title">
+                The Leading Real Estate Rental Marketplace.
+              </h2>
+
+              <p class="about-text">
+                Established in 2022, Myra Buildwell Private Limited has
+                completed 20 residential projects in Chhattarpur, offering 1BHK
+                to 4BHK units. We've delighted over 200 families and expanded
+                into commercial spaces, facilitating 80% loan approvals.
+              </p>
+
+              <ul class="about-list">
+                <li class="about-item">
+                  <div class="about-item-icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                  </div>
+
+                  <p class="about-item-text">Smart Home Design</p>
+                </li>
+
+                <li class="about-item">
+                  <div class="about-item-icon">
+                    <ion-icon name="leaf-outline"></ion-icon>
+                  </div>
+
+                  <p class="about-item-text">Beautiful Scene Around</p>
+                </li>
+
+                <li class="about-item">
+                  <div class="about-item-icon">
+                    <ion-icon name="wine-outline"></ion-icon>
+                  </div>
+
+                  <p class="about-item-text">Exceptional Lifestyle</p>
+                </li>
+
+                <li class="about-item">
+                  <div class="about-item-icon">
+                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                  </div>
+
+                  <p class="about-item-text">Complete 24/7 Security</p>
+                </li>
+              </ul>
+
+              <a href="#service" class="btn">Our Services</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Our projects -->
+        <section class="animate property" id="property" data-aos="fade">
+          <div class="container">
+            <p
+              class="section-subtitle"
+              style="background-color: #fee39f; color: #c0921d"
+            >
+              Our Projects
+            </p>
+
+            <!-- <h2 class="h2 section-title" style="color: #454C77;">Featured Listings</h2> -->
+
+            <ul class="property-list has-scrollbar">
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/LIVING 1st View.jpg"
+                        alt="New Apartment Nice View"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <div class="card-badge green">Completed</div>
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>New Delhi</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">New Apartment Nice View</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/property-2.jpg"
+                        alt="Modern Apartments"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <div class="card-badge orange">Ongoing</div>
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>Gurugram</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title aa">
+                      <a href="#">Modern Apartments</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/property-3.jpg"
+                        alt="Comfortable Apartment"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <div class="card-badge green">Upcoming</div>
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>Ghaziabad</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title aa">
+                      <a href="#">Comfortable Apartment</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/property-4.png"
+                        alt="Luxury villa in Rego Park"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <div class="card-badge green">Upcoming</div>
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>New Delhi</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title aa">
+                      <a href="#">Luxury villa in Rego Park</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+        - #PROPERTY
+      -->
+
+        <section class="animate property" id="property" data-aos="fade">
+          <div class="container">
+            <p
+              class="section-subtitle"
+              style="background-color: #fee39f; color: #c0921d"
+            >
+              Properties
+            </p>
+
+            <h2 class="h2 section-title" style="color: #454c77">
+              Featured Listings
+            </h2>
+
+            <ul class="property-list has-scrollbar">
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/LIVING 1st View.jpg"
+                        alt="New Apartment Nice View"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <!-- <div class="card-badge green">For Rent</div> -->
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>New Delhi</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">New Apartment Nice View</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/property-2.jpg"
+                        alt="Modern Apartments"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <!-- <div class="card-badge orange">For Sales</div> -->
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>Gurugram</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title aa">
+                      <a href="#">Modern Apartments</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/property-3.jpg"
+                        alt="Comfortable Apartment"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <!-- <div class="card-badge green">For Rent</div> -->
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>Ghaziabad</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title aa">
+                      <a href="#">Comfortable Apartment</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+
+              <li>
+                <div class="property-card">
+                  <figure class="card-banner">
+                    <a href="#">
+                      <img
+                        src="./assets/images/property-4.png"
+                        alt="Luxury villa in Rego Park"
+                        class="w-100"
+                      />
+                    </a>
+
+                    <!-- <div class="card-badge green">For Rent</div> -->
+
+                    <div class="banner-actions">
+                      <button class="banner-actions-btn">
+                        <ion-icon name="location"></ion-icon>
+
+                        <address>New Delhi</address>
+                      </button>
+                    </div>
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-price" style="color: #c0921d">
+                      <strong>Rs.34,900</strong>/Month
+                    </div>
+
+                    <h3 class="h3 card-title aa">
+                      <a href="#">Luxury villa in Rego Park</a>
+                    </h3>
+
+                    <p class="card-text">
+                      Beautiful Huge 1 Family House In Heart Of Westbury. Newly
+                      Renovated With New Wood
+                    </p>
+
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <strong>3</strong>
+
+                        <ion-icon name="bed-outline"></ion-icon>
+
+                        <span>Bedrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>2</strong>
+
+                        <ion-icon name="man-outline"></ion-icon>
+
+                        <span>Bathrooms</span>
+                      </li>
+
+                      <li class="card-item">
+                        <strong>3450</strong>
+
+                        <ion-icon name="square-outline"></ion-icon>
+
+                        <span>Square Ft</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-footer"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+        - #FEATURES
+      -->
+
+        <section class="animate features" data-aos="fade">
+          <div class="container">
+            <p
+              class="section-subtitle"
+              style="background-color: #fee39f; color: #c0921d"
+            >
+              Our Aminities
+            </p>
+
+            <h2 class="h2 section-title" style="color: #454c77">
+              Building Aminities
+            </h2>
+
+            <ul class="features-list">
+              <li>
+                <a href="#" class="features-card">
+                  <div
+                    class="card-icon"
+                    style="background-color: #fee39f; color: #c0921d"
+                  >
+                    <ion-icon name="car-sport-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title" style="color: #454c77">
+                    Parking Space
+                  </h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="features-card">
+                  <div class="card-icon">
+                    <ion-icon name="water-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title">Swimming Pool</h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="features-card">
+                  <div class="card-icon">
+                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title">Private Security</h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="features-card">
+                  <div class="card-icon">
+                    <ion-icon name="fitness-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title">Medical Center</h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="features-card">
+                  <div class="card-icon">
+                    <ion-icon name="library-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title">Library Area</h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="features-card">
+                  <div class="card-icon">
+                    <ion-icon name="bed-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title">King Size Beds</h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="features-card">
+                  <div class="card-icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title">Smart Homes</h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="features-card">
+                  <div class="card-icon">
+                    <ion-icon name="football-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="card-title">Kid’s Playland</h3>
+
+                  <div class="card-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+        - #BLOG
+      -->
+
+        <section class="blog" id="blog" data-aos="slide-right">
+          <div class="container">
+            <p
+              class="section-subtitle"
+              style="background-color: #fee39f; color: #c0921d"
+            >
+              News & Blogs
+            </p>
+
+            <h2 class="h2 section-title" style="color: #454c77">
+              Leatest News Feeds
+            </h2>
+
+            <ul class="blog-list has-scrollbar">
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner">
+                    <img
+                      src="./assets/images/blog-1.png"
+                      alt="The Most Inspiring Interior Design Of 2021"
+                      class="w-100"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-content-top">
+                      <ul class="card-meta-list">
+                        <li>
+                          <a href="#" class="card-meta-link">
+                            <ion-icon
+                              name="person"
+                              style="color: #c0921d"
+                            ></ion-icon>
+
+                            <span>by: Admin</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#" class="card-meta-link">
+                            <ion-icon
+                              name="pricetags"
+                              style="color: #c0921d"
+                            ></ion-icon>
+
+                            <span>Interior</span>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <h3 class="h3 blog-title">
+                        <a href="#" style="color: #454c77"
+                          >The Most Inspiring Interior Design Of 2021</a
+                        >
+                      </h3>
+                    </div>
+
+                    <div class="blog-content-bottom">
+                      <div class="publish-date">
+                        <ion-icon
+                          name="calendar"
+                          style="color: #c0921d"
+                        ></ion-icon>
+
+                        <time datetime="2022-27-04">Apr 27, 2022</time>
+                      </div>
+
+                      <!-- <a href="#" class="read-more-btn">Read More</a> -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner">
+                    <img
+                      src="./assets/images/blog-2.jpg"
+                      alt="Recent Commercial Real Estate Transactions"
+                      class="w-100"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-content-top">
+                      <ul class="card-meta-list">
+                        <li>
+                          <a href="#" class="card-meta-link">
+                            <ion-icon
+                              name="person"
+                              style="color: #c0921d"
+                            ></ion-icon>
+
+                            <span>by: Admin</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#" class="card-meta-link">
+                            <ion-icon
+                              name="pricetags"
+                              style="color: #c0921d"
+                            ></ion-icon>
+
+                            <span>Estate</span>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <h3 class="h3 blog-title">
+                        <a href="#" style="color: #454c77"
+                          >Recent Commercial Real Estate Transactions</a
+                        >
+                      </h3>
+                    </div>
+
+                    <div class="blog-content-bottom">
+                      <div class="publish-date">
+                        <ion-icon
+                          name="calendar"
+                          style="color: #c0921d"
+                        ></ion-icon>
+
+                        <time datetime="2022-27-04">Apr 27, 2022</time>
+                      </div>
+
+                      <!-- <a href="#" class="read-more-btn">Read More</a> -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner">
+                    <img
+                      src="./assets/images/blog-3.jpg"
+                      alt="Renovating a Living Room? Experts Share Their Secrets"
+                      class="w-100"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-content-top">
+                      <ul class="card-meta-list">
+                        <li>
+                          <a href="#" class="card-meta-link">
+                            <ion-icon
+                              name="person"
+                              style="color: #c0921d"
+                            ></ion-icon>
+
+                            <span>by: Admin</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#" class="card-meta-link">
+                            <ion-icon
+                              name="pricetags"
+                              style="color: #c0921d"
+                            ></ion-icon>
+
+                            <span>Room</span>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <h3 class="h3 blog-title">
+                        <a href="#" style="color: #454c77"
+                          >Renovating a Living Room? Experts Share Their
+                          Secrets</a
+                        >
+                      </h3>
+                    </div>
+
+                    <div class="blog-content-bottom">
+                      <div class="publish-date">
+                        <ion-icon
+                          name="calendar"
+                          style="color: #c0921d"
+                        ></ion-icon>
+
+                        <time datetime="2022-27-04">Apr 27, 2022</time>
+                      </div>
+
+                      <!-- <a href="#" class="read-more-btn">Read More</a> -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+        - #CTA
+      -->
+
+        <section class="cta">
+          <div class="container" style="background-color: #c0921d">
+            <div class="cta-card" style="background-color: #c0921d">
+              <div class="card-content">
+                <h2 class="h2 card-title">Looking for a dream home?</h2>
+
+                <p class="card-text">
+                  We can help you realize your dream of a new home
+                </p>
+              </div>
+
+              <button class="btn cta-btn">
+                <span>Explore Properties</span>
+
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- whatsapp -->
+    <div
+      style="
+        position: fixed;
+        left: 8px;
+        bottom: 25px;
+        z-index: +10000000000;
+        border-radius: 100%;
+      "
+    >
+      <a href=""
+        ><img
+          src="./assets/images/whatsapp.jpg"
+          alt=""
+          style="border-radius: 100%"
+          width="70"
+      /></a>
+    </div>
+
+    <!-- 
+    - #FOOTER
+  -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img
+                src="./assets/images/IMG_7023-removebg-preview.png"
+                alt="MyraBuildwell logo"
+              />
+            </a>
+
+            <p class="section-text">
+              Lorem Ipsum is simply dummy text of the and typesetting industry.
+              Lorem Ipsum is dummy text of the printing.
+            </p>
+
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-link-box">
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Recent Properties</p>
+              </li>
+
+              <li style="display: flex">
+                <div>
+                  <img src="assets/images/blog-1.png" alt="" width="70" />
+                </div>
+                <div style="padding: 4%"><a href="">3BHK Flate</a></div>
+              </li>
+              <hr />
+              <li style="display: flex">
+                <div>
+                  <img src="assets/images/blog-1.png" alt="" width="70" />
+                </div>
+                <div style="padding: 4%"><a href="">3BHK Flate</a></div>
+              </li>
+              <hr />
+              <li style="display: flex">
+                <div>
+                  <img src="assets/images/blog-1.png" alt="" width="70" />
+                </div>
+                <div style="padding: 4%"><a href="">3BHK Flate</a></div>
+              </li>
+            </ul>
+
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Get In Touch</p>
+              </li>
+
+              <li>
+                <a href="#" class="contact-link">
+                  <ion-icon name="location-outline"></ion-icon>
+
+                  <address>Brooklyn, New York, United States</address>
+                </a>
+              </li>
+              <br />
+
+              <li>
+                <a href="tel:+0123456789" class="contact-link">
+                  <ion-icon name="call-outline"></ion-icon>
+
+                  <span>+0123-456789</span>
+                </a>
+              </li>
+              <br />
+              <li>
+                <a href="mailto:contact@homeverse.com" class="contact-link">
+                  <ion-icon name="mail-outline"></ion-icon>
+
+                  <span>contact@homeverse.com</span>
+                </a>
+              </li><br>
+              <li>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.749042546519!2d77.17897420890108!3d28.48710347564331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x28e4d867492cd611%3A0xc6741be049fac599!2sMYRA%20BUILDWELL!5e0!3m2!1sen!2sin!4v1731559069221!5m2!1sen!2sin"
+                  width="300"
+                  height="150"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy; 2024 <a href="#">Webteksolutions</a>. All Rights Reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- - custom js link -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script>
+      // Show the popup on page load
+      window.onload = function () {
+        document.getElementById("popup").style.display = "flex";
+      };
+
+      // Close the popup and display main content
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }
+
+      // Form submission event
+      document
+        .getElementById("popupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          closePopup(); // Close the popup after form submission
+        });
+    </script>
+    <script>
+      // Select all elements with the 'animate' class
+      const sections = document.querySelectorAll(".animate");
+
+      const animateOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+
+          if (sectionTop < triggerBottom) {
+            section.classList.add("show"); // Add 'show' class to animate
+            if (section.classList.contains("slide-left")) {
+              section.classList.add("slide-left");
+            } else if (section.classList.contains("slide-right")) {
+              section.classList.add("slide-right");
+            } else {
+              section.classList.add("fade-in");
+            }
+          }
+        });
+      };
+
+      // Run the animation function on scroll
+      window.addEventListener("scroll", animateOnScroll);
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      AOS.init({
+        offset: 140, // offset (in px) from the original trigger point
+        duration: 1000,
+      });
+    </script>
+  </body>
+</html>
